@@ -4,8 +4,15 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
+jupyter = "*"
+notebook = "*"
+pandas = "*"
+matplotlib = "*"
+seaborn = "*"
+category-encoders = "*"
+sklearn = "*"
 
 [dev-packages]
 
 [requires]
-python_version = "3.9"
+python_version = "3.8"
