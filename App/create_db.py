@@ -1,5 +1,5 @@
 import pandas as pd
-
+import sqlite3
 
 
 
@@ -40,6 +40,12 @@ def create_db():
     df['Opp.GameChangers'] = df['Opp.Steals'] + df['Opp.Blocks']
 
     print(df.head())
+    # Create connection to the new db and save the dataframe
+    conn = sqlite3.connect('Data/bbstats.sqlite3')
+    c = conn.cursor()
+    c.execute("DROP TABLE IF EXISTS bbstats")
+    df.to_sql('bbstats', con=conn)
+    conn.close()
 
     
 if __name__ == '__main__':
