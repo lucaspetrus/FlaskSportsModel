@@ -11,6 +11,7 @@ matplotlib = "*"
 seaborn = "*"
 category-encoders = "*"
 sklearn = "*"
+flask = "*"
 
 [dev-packages]
 
