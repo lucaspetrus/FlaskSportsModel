@@ -12,10 +12,7 @@ seaborn = "*"
 category-encoders = "*"
 sklearn = "*"
 flask = "*"
-<<<<<<< HEAD
 python-dotenv = "*"
-=======
->>>>>>> aa93fc429c9751a3b512684c66a8f74869c2228a
 
 [dev-packages]
 
