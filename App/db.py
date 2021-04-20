@@ -2,10 +2,9 @@ import pandas as pd
 import sqlite3
 
 
-
 def create_db():
-    df = pd.read_csv('Data/data.csv')
-    
+    df = pd.read_csv('data.csv')
+
     df = df.drop(columns={'Unnamed: 0'}, axis=1)
 
     #dropping columns that give model too much information
@@ -45,15 +44,15 @@ def create_db():
     df['HighFoul%'] = df['TotalFouls'] >= 30
     df['Opp.HighFoul%'] = df['Opp.TotalFouls'] >= 30
     df['Opp.GameChangers'] = df['Opp.Steals'] + df['Opp.Blocks']
-
-    print(df.head())
     
     # Create connection to the new db and save the dataframe
-    conn = sqlite3.connect('Data/bbstats.sqlite3')
+    conn = sqlite3.connect('/Users/lucaspetrus/PycharmProjects/FlaskSportsModelUpdated/Data/NBAdata.sqlite3')
     c = conn.cursor()
-    c.execute("DROP TABLE IF EXISTS bbstats")
-    df.to_sql('bbstats', con=conn)
-    conn.close()
+    c.execute("DROP TABLE IF EXISTS stats")
+
+    df.to_sql('stats', con=conn)
+
+
 
     
 if __name__ == '__main__':
