@@ -52,10 +52,10 @@ def create_db():
 
     df.to_sql('stats', con=conn)
 
-    team_query = 'SELECT * FROM stats'
+    team_query = 'SELECT COUNT(*) Team FROM stats'
     c.execute(team_query)
     results = c.fetchall()  # fetchall() is somewhat interchangeable
-    print(f"{results}")
+    print(f"{results[0]}")
 
 
 
