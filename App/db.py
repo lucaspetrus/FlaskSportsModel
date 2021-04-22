@@ -46,7 +46,7 @@ def create_db():
     df['Opp.GameChangers'] = df['Opp.Steals'] + df['Opp.Blocks']
     
     # Create connection to the new db and save the dataframe
-    conn = sqlite3.connect('/Users/lucaspetrus/PycharmProjects/FlaskSportsModelUpdated/Data/NBAdata.sqlite3')
+    conn = sqlite3.connect('../Data/NBAdata.sqlite3')
     c = conn.cursor()
     c.execute("DROP TABLE IF EXISTS stats")
 
