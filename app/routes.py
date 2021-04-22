@@ -14,9 +14,11 @@ def root():
     user = {'username': 'Jody'}
 
     # Proof of concept code showing that we can connect to the database, run a query, and return the results to a webpage
-    conn = sqlite3.connect('Data/bbstats.sqlite3')
+    # conn = sqlite3.connect('Data/bbstats.sqlite3')
+    conn = sqlite3.connect('Data/NBAdata.sqlite3')
+
     c = conn.cursor()
-    c.execute('SELECT * FROM bbstats')
+    c.execute('SELECT * FROM stats')
     stuff = c.fetchall()
     print(stuff[0][1])
     print(type(stuff))
